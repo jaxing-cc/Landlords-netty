@@ -8,7 +8,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import org.jaxing.tcpserver.handler.ServerInitHandler;
 
 public class TcpServerStarter {
-    private final int port = 9527;
+    private final int port = 10666;
     public void start(){
         EventLoopGroup boss = new NioEventLoopGroup(1);
         EventLoopGroup work = new NioEventLoopGroup();

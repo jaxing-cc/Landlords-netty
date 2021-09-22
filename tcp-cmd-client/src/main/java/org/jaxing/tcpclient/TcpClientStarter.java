@@ -25,7 +25,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class TcpClientStarter {
-    private int port = 9527;
+    private int port = 10666;
     private String host = "localhost";
     private Scanner scanner;
     private CmdExecutor executor;

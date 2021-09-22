@@ -179,12 +179,15 @@ public class GameInfo {
      * @return
      */
     public int play(ChannelHandlerContext ctx, char[] charArray, String type) {
-        byte code = (byte) (type.charAt(0) - '0');
+        int code = 0;
+        for (int i = 0; i < type.length(); i++) {
+            code = code * 10 + (type.charAt(i) - '0');
+        }
         User currentUser = getCurrentUser();
         ChannelId id = currentUser.getChannel().id();
         PokerGroup pokerGroup = pokerGroups.get(id);
         //牌型
-        PokerGroupType pokerGroupType = PokerGroupType.map.get(code);
+        PokerGroupType pokerGroupType = PokerGroupType.map.get((byte) code);
         logger.debug(currentUser + " , 已经出牌,出牌的类型是:" + pokerGroupType);
         if (pokerGroupType == PokerGroupType.PASS){
             if (lastPokers.getId() == id){
